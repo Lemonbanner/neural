@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Tabs":"../../components/Tabs/Tabs",
+    "searchInput":"../../components/searchInput/searchInput"
+  },
+  "navigationBarTitleText": "聊一聊",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"dark",
+  "navigationBarBackgroundColor": "#16C4AF"
+}

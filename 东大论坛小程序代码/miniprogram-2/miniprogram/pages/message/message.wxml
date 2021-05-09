@@ -1,0 +1,244 @@
+
+<!--头部消息中心-->
+
+<view class='title' style='height:{{navH}}px'  catchtouchmove='true'>
+
+  <view class='title-text'>消息中心</view>
+
+  <!-- 私信、通知切换栏 -->
+
+<view class="selectTab" style='margin-top:{{navH}}px' catchtouchmove='true'>
+
+  <view class="flex-row">
+
+    <view class="message {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+
+    评论
+
+    <!--气泡提示-->
+
+    <view class='bubble'>
+
+    </view>
+
+    </view>
+
+    <view class="notify {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+
+    点赞
+
+    <!--气泡提示-->
+
+    <view class='bubble'>
+
+    </view>
+
+    </view>
+ <view class="notify {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">
+
+    回复
+
+    <!--气泡提示-->
+
+    <view class='bubble'>
+
+    </view>
+
+    </view>
+  </view>
+
+  <view class='onTabLine' style="margin-left:{{95+currentTab*198}}rpx" catchtouchmove="ture"></view>
+
+  <view class='line'></view>
+
+</view>
+
+</view>
+
+ 
+
+<!--评论消息列表-->
+
+<scroll-view scroll-y="true" class="message-list" style="margin-top:{{navH+47}}px;height:1200rpx"  wx:if="{{currentTab==0}}" >
+  <block wx:for="{{showData}}" wx:for-item="itemName" wx:for-index="id"  wx:key="_id">
+  <view data-reply_id="{{itemName.userID}}"  data-reply_name="{{itemName.username}}"  data-wall_love_id="{{itemName.wall_love_id}}" data-reply_message="{{itemName.comment}}" 
+   data-_id="{{itemName._id}}"   bindtap="bindReply"    class='user'  >
+
+  <image class='header-icon' src="{{itemName.face_url}}"></image>
+
+  <view class='user-content'>
+
+    <view class='firstline'>
+
+      <view class='apart'>
+
+      <view class='username'>
+
+        <text >{{itemName.username}}</text><text class="shortfor">评论了{{itemName.wall_love_message}}...</text>
+
+      </view>
+
+      <view class='cooperation'>
+      </view>
+
+      </view>
+
+      <view class='time'>
+
+        <view class='time-num'>{{itemName.timestamp}}</view>
+
+      </view>
+
+    </view>
+
+    <view class='secondline'>
+
+      <view class='dialog'>
+      <text class="{{currentID==itemName._id?'_user':''}}">:{{itemName.comment}}</text>
+      </view>
+
+     
+
+    </view>
+
+  </view>
+
+  </view>
+
+<!--分割线-->
+
+<view class='linecut'></view>
+ </block>
+</scroll-view>
+
+
+
+
+
+
+<scroll-view scroll-y="true" class="message-list" style="margin-top:{{navH+47}}px;height:1200rpx"  wx:if="{{currentTab==1}}" >
+  <block wx:for="{{showLikeData}}" wx:for-item="itemName" wx:for-index="id">
+  <view class='user' >
+
+  <image class='header-icon' src="{{itemName.face_url}}"></image>
+
+  <view class='user-content'>
+
+    <view class='firstline'>
+
+      <view class='apart'>
+
+      <view class='username'>
+
+        <text >{{itemName.username}}点赞了</text> 
+
+      </view>
+
+      <view class='cooperation'>
+      </view>
+
+      </view>
+
+
+    </view>
+ <view class='secondline'>
+
+      <view class='dialog'>
+      <text>你的：{{itemName.be_liked_message}}...</text>
+      </view>
+
+      <view class='dialog-nums'>
+
+      </view>
+
+    </view>
+  </view>
+
+  </view>
+<!--分割线-->
+
+<view class='linecut'></view>
+ </block>
+</scroll-view>
+
+
+
+
+
+
+
+<!-- 回复页面 -->
+
+<scroll-view scroll-y="true" class="message-list" style="margin-top:{{navH+47}}px;height:1200rpx"  wx:if="{{currentTab==2}}" >
+  <block wx:for="{{showReData}}" wx:for-item="itemName" wx:for-index="id" >
+  <view class='user'  data-reply_id="{{itemName.userID}}"   data-reply_name="{{itemName.username}}"  data-_id="{{itemName._id}}"    data-reply_message="{{itemName.comment}}" bindtap="bindReply">
+
+  <image class='header-icon' src="{{itemName.face_url}}"></image>
+
+  <view class='user-content'>
+
+    <view class='firstline'>
+
+      <view class='apart'>
+
+      <view class='username'>
+
+        <text >{{itemName.username}}</text><text class="shortfor">回复了评论“{{itemName.reply_to_message}}..."</text>
+
+      </view>
+
+      <view class='cooperation'>
+      </view>
+
+      </view>
+
+      <view class='time'>
+
+        <view class='time-num'>{{itemName.timestamp}}</view>
+
+      </view>
+
+    </view>
+
+    <view class='secondline'>
+
+      <view class='dialog'>
+      <text class="{{currentID==itemName._id?'_user':''}}" >：{{itemName.comment}}</text>
+      </view>
+
+      <view class='dialog-nums'>
+
+      </view>
+
+    </view>
+
+  </view>
+
+  </view>
+<!--分割线-->
+
+<view class='linecut'></view>
+ </block>
+</scroll-view>
+
+
+<!-- 发送评论 -->
+<view class="container" wx:if="{{currentTab==0 || currentTab==2}}">
+ <!--  <button bindtap="bindReply">回复</button> -->
+  <view class="release">
+    <textarea 
+      class="text"
+      placeholder-class="releaseInput"
+      value="{{content}}"
+      fixed="true" 
+      maxlength="120" 
+      show-confirm-bar="{{false}}" 
+      cursor-spacing="15" 
+      auto-height="true" 
+      focus="{{focus}}"
+      placeholder="回复"
+      value="{{content}}"
+      bindinput="contentInput"></textarea>
+    <view class="submit" bindtap="reply">发送</view>
+  </view>
+</view>

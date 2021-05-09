@@ -1,0 +1,11 @@
+<!--pages/up_menu/up_menu.wxml-->
+<text>pages/up_menu/up_menu.wxml</text>
+<!--pages/bottom_menu/bottom_menu.wxml-->
+<view class="bottomrow">
+  <view id="first" class="bottomtab" bindtap="select3">
+    <text class="bottomtabText" style="color:{{color3}}">拼车</text>
+  </view>
+  <view id="third" class="bottomtab" bindtap="select4">
+    <text class="bottomtabText" style="color:{{color4}}">失物招领</text>
+  </view>
+</view>

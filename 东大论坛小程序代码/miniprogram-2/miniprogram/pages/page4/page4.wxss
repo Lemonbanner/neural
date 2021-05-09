@@ -1,0 +1,60 @@
+/* pages/page4/page4.wxss */
+.username_item{
+  position: absolute;
+  left: 48px;
+  top: 168px;
+  width: 240px;
+  height: 50px;
+  line-height: 26px;
+  border-radius: 8px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial;
+  border: 1px solid rgba(187, 187, 187, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+ 
+.password_item{
+  position: absolute;
+  left: 46px;
+  top: 248px;
+  width: 243px;
+  height: 50px;
+  line-height: 26px;
+  border-radius: 8px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial;
+  border: 1px solid rgba(187, 187, 187, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+ 
+.bussiness_input {
+  left: 143px;
+  top: 221px;
+  width: 80px;
+  height: 28px;
+  opacity: 0.3;
+  color: rgba(16, 16, 16, 1);
+  font-size: 20px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+ 
+.login_submit {
+  position: absolute;
+  left: 80px;
+  top: 350px;
+  width: 175px;
+  height: 50px;
+  line-height: 20px;
+  border-radius: 16px;
+  background-color:rgba(62, 68, 105, 1);
+  color:rgba(255, 255, 255, 1);
+  border: 1px solid rgba(187, 187, 187, 1);
+  font-size: 28px;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}

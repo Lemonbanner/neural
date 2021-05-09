@@ -1,0 +1,76 @@
+{
+  "pages": [  
+    "pages/load/load",
+    "pages/square_biaobai/square_biaobai",
+    "pages/page3/page3",
+    "pages/login/login",
+    "pages/square_pinche/square_pinche",
+    "pages/test/test",
+    "pages/new/new",
+    "pages/enroll/enroll",
+    "pages/square_xiaoer/square_xiaoer",
+    "pages/square_shiwu/square_shiwu",
+    "pages/index-new/index-new",
+    "pages/commit_biaobai/commit_biaobai",
+    "pages/commit_xiaoer/commit_xiaoer",
+    "pages/commit_pinche/commit_pinche",
+    "pages/commit_shiwu/commit_shiwu",
+    "pages/commit/commit",
+    "pages/search_car/search_car",
+    "pages/search_wall_love/search_wall_love",
+    "pages/search_wall_waiter/search_wall_waiter",
+    "pages/search_lost/search_lost",  
+    "pages/up_menu/up_menu",
+    "pages/index/index",
+    "pages/page2/page2",
+    "pages/message/message",
+    "pages/auth/auth",
+    "pages/chat/chat",
+    "pages/page4/page4",
+    "pages/information/information",
+    "pages/setinfo/setinfo",
+    "pages/communications/communications",
+    "pages/my_square_biaobai/my_square_biaobai",
+    "pages/my_square_xiaoer/my_square_xiaoer",
+    "pages/my_square_pinche0/my_square_pinche0",
+    "pages/my_square_shiwu/my_square_shiwu"
+
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/square_biaobai/square_biaobai",
+        "text": "主页",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home.png"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "发布",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "icon/message-N.png",
+        "selectedIconPath": "icon/message.png"
+      },
+      {
+        "pagePath": "pages/page3/page3",
+        "text": "我的",
+        "iconPath": "icon/user-N.png",
+        "selectedIconPath": "icon/user.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "NEU东大论坛",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

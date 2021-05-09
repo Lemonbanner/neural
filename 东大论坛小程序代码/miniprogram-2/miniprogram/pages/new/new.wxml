@@ -1,0 +1,27 @@
+<!--pages/new/new.wxml-->
+
+<view class="all">
+  <view class="up">
+    <view class="one_button" bindtap="biaobaiCommit">
+      <image src="/images/表白墙.png" class="imgc"></image>
+      <text class="imgtxt">  表白墙</text>
+    </view>
+    <view class="one_button" bindtap="xiaoerCommit">
+     <image src="/images/小二.png" class="imgc"></image>
+     <text class="imgtxt">  墙小二</text>
+    </view>
+    <view class="one_button" bindtap="pincheCommit">
+      <image src="/images/拼车.png" class="imgc"></image>
+      <text class="imgtxt">拼车信息</text>
+    </view>
+     <view class="one_button" bindtap="shiwuCommit">
+    <image src="/images/失物招领.png" class="imgc"></image>
+     <text class="imgtxt">失物招领</text>
+    </view>
+  </view>
+  <view class="down">
+    <image class="imgc" src="/images/add.png"></image>
+    <text class="imgtxt">点击上方文字发布信息！</text>
+  </view>
+</view>
+

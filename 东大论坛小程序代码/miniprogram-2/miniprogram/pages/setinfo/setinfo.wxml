@@ -1,0 +1,34 @@
+<!--pages/setinfo/setinfo.wxml-->
+
+
+<!--<view class="itemView">学号：
+    <input class="input" name="userID" placeholder="请输入学号" 
+    bindinput="userIDInput"/>
+  </view>-->
+<view class="itemView">昵称：
+    <input class="input" name="userName" placeholder="请输入昵称" value="{{myinfo.name}}" 
+    bindinput="userNameInput"/>
+  </view>
+<view class="itemView">个性签名：
+    <input class="input" name="userSay" placeholder="请输入个人签名" value="{{myinfo.personal_signature}}"
+    bindinput="userSayInput"/>
+  </view>
+  <view class="itemView">身份：
+    <input class="input" name="userIdentity" placeholder="请输入个人身份" value="{{myinfo.identity}}"
+    bindinput="userIdentityInput"/>
+  </view>
+  <view class="itemView">专业：
+    <input class="input" name="userDepartment" placeholder="请输入专业名称" value="{{myinfo.department}}"
+    bindinput="userDepartmentInput"/>
+  </view>
+  <view class="itemView">年龄：
+    <input class="input" name="userAge" placeholder="请输入个人年龄" value="{{myinfo.age}}"
+    bindinput="userAgeInput"/>
+  </view>
+<view class="viewName" style="background-color:#fbf9fe">
+  <!--<button class="loginBtn" bindtap="loginBtnClick">登录</button>-->
+  <button class="resetBtn" bindtap="resetBtnClick">修改</button>
+</view>
+<view>{{infoMess}}</view>
+<view>{{userName}}</view>
+<view>{{passWd}}</view>

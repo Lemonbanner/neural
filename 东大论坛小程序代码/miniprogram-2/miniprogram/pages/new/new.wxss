@@ -1,0 +1,49 @@
+/* pages/new/new.wxss */
+page{
+  background-color: #efefef;
+}
+.all{
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  left: 0rpx;
+  right: 0rpx;
+  top: 0rpx;
+  position: absolute;
+}
+.up{
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.one_button{
+
+  margin-left : 30rpx;
+  margin-right: 30rpx;
+}
+.imgc2{
+  width: 130rpx;
+  height: 130rpx;
+}
+.imgtxt{
+  font-size: 32rpx;
+  color: #3f51b5;
+  font-family: PingFangSC-regular;
+  font-weight: bold;
+}
+
+.down{
+  margin-top: 70%;
+  width:100%;
+  display: flex;
+  /* flex-direction:row; */
+  align-items: center;
+  justify-content: center;
+}
+.imgc{
+  width: 140rpx;
+  height: 140rpx;
+}

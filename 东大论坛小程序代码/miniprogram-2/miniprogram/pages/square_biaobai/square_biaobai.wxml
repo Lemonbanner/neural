@@ -1,0 +1,147 @@
+<include src="/pages/up_menu/up_menu" />
+
+<scroll-view class="scbg" scroll-y="ture">
+  <view class="search" bindtap="searchtap">
+    <view class="search_input">
+      <input class="search_input2" placeholder='搜索表白墙信息' value='{{searchVal}}' bindconfirm="search" bindinput="input"></input>
+      <image class="search_clear" wx:if="{{ searchVal != '' }}" catchtap="clear" src="../../icon/clear.png"></image>
+    </view>
+    <image class="search_image" src="../../icon/search.png" catchtap="search"></image>
+  </view>
+
+  <block wx:for="{{showData}}" wx:for-item="itemName" wx:for-index="id">
+    <view class="box">
+      <view class="firstblock">
+        <image class="touxiang" src="{{itemName.face_url}}"></image>
+        <view class="person">
+          <view class="name">
+            <text class="showname">{{itemName.username}}</text>
+          </view>
+          <view class="tel">
+            <text class="showtime">{{itemName.timestamp}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="secondblock">
+        <text class="content">{{itemName.message}}</text>
+      </view>
+      <view class="thirdblock"  data-like_num="{{itemName.total_likes}}" data-wall_id="{{itemName._id}}"
+      data-publisher_id="{{itemName.publisher_id}}" data-message="{{itemName.message}}"   bindtap="like">
+      <image class="like" wx:if="{{itemName.total_likes}}" src="/images/nice_true.png"></image> <image class="like" wx:else src="/images/nice.png"    ></image>
+        <text class="num">{{itemName.total_likes}}</text>
+      </view>
+       <view class="container">
+        <view class="release">
+          <textarea class="text" placeholder-class="releaseInput" value="{{content}}" fixed="true" maxlength="120" show-confirm-bar="{{false}}" cursor-spacing="15" auto-height="true" focus="{{focus}}" placeholder="评论"  bindinput="contentInput"></textarea>
+          <view class="submit" catchtap="comment" data-publisher_id="{{itemName.publisher_id}}" data-wall_id="{{itemName._id}}"  data-wall_message="{{itemName.message}}">发送</view>
+        </view>
+
+      <view>
+
+      <block wx:for="{{showCommentData}}" wx:for-item="itemNameC" wx:for-index="idC" >
+      <view  wx:if= "{{itemNameC.wall_love_id==itemName._id}}">
+      <view class='user' bindtap="bindReply"     data-reply_id= "{{itemNameC.userID}}"  data-reply_name="{{itemNameC.username}}"  data-wall_love_id="{{itemName._id}}" data-reply_message="{{itemNameC.comment}}"  data-_id="{{itemNameC._id}}"       >
+
+      <image class='header-icon' src="{{itemNameC.face_url}}"></image>
+
+      <view class='user-content'>
+
+      <view class='firstline'>
+
+      <view class='apart'>
+
+      <view class='username'>
+
+        <text >{{itemNameC.username}}</text>
+
+      </view>
+      </view>
+      </view>
+      
+    <view class='secondline'>
+
+      <view class='dialog'>
+      <text class="{{currentID==itemNameC._id?'_user':''}}">{{itemNameC.comment}}</text>
+      </view>
+
+     
+
+    </view>
+
+      </view>
+      </view>
+
+<!--分割线-->
+
+<view class='linecut'></view>
+</view>
+ </block>
+
+
+
+
+<block wx:for="{{showCommentReData}}" wx:for-item="itemNameRe" wx:for-index="idRe"  >
+      <view  wx:if= "{{itemNameRe.reply_to_wall_id==itemName._id}}">
+      <view class='user'  bindtap="bindReply"     data-reply_id="{{itemNameRe.userID}}"  data-reply_name="{{itemNameRe.username}}"  data-wall_love_id="{{itemName._id}}" data-reply_message="{{itemNameRe.comment}}"  data-_id="{{itemNameRe._id}}"       >
+
+      <image class='header-icon' src="{{itemNameRe.face_url}}"></image>
+
+      <view class='user-content'>
+
+      <view class='firstline'>
+
+      <view class='apart'>
+
+      <view class='username'>
+
+        <text>{{itemNameRe.username}}</text><text class="shortfor">回复了评论“{{itemNameRe.reply_to_message}}..."</text>
+
+      </view>
+      </view>
+      </view>
+      
+    <view class='secondline'>
+
+      <view class='dialog'>
+      <text class="{{currentID==itemNameRe._id?'_user':''}}" >{{itemNameRe.comment}}</text>
+      </view>
+
+     
+
+    </view>
+
+      </view>
+      </view>
+
+<!--分割线-->
+
+<view class='linecut'></view>
+</view>
+ </block>
+ </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+
+<!-- 发送回复 -->
+<view class="container2" wx:if="{{ifchoose==1}}" >
+ <!--  <button bindtap="bindReply">回复</button> -->
+  <view class="release2">
+    <textarea 
+      class="text2"
+      placeholder-class="releaseInput2"
+      value="{{content}}"
+      fixed="true" 
+      maxlength="120" 
+      show-confirm-bar="{{false}}" 
+      cursor-spacing="15" 
+      auto-height="true" 
+      focus="{{focus2}}"
+      placeholder="回复"
+      value="{{content}}"
+      bindinput="contentInputRe"></textarea>
+    <view class="submit2" bindtap="reply">发送</view>
+  </view>
+</view>

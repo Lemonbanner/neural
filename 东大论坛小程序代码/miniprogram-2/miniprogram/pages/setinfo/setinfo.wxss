@@ -1,0 +1,9 @@
+/* pages/setinfo/setinfo.wxss */
+.right{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  color: #ccc;
+  margin-right: 20rpx;
+  }
+  

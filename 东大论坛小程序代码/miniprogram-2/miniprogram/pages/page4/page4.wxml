@@ -1,0 +1,17 @@
+<!--pages/page4/page4.wxml-->
+    <view class='username_item'>
+      <input class='bussiness_input' name="username"  
+      bindinput='userNameInput' placeholder='输入帐号' />
+    </view>
+    <view class='password_item'>
+      <input class='bussiness_input' password type="text" name="password" 
+       bindinput='passWordInput' placeholder='输入密码'  />
+    </view>
+    <view>
+    <button form-type='submit' class='login_submit' bindtap="loginBtnClick">
+      登录
+    </button>
+    </view>
+
+
+

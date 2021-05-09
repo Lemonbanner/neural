@@ -1,0 +1,17 @@
+<!--pages/bottom_menu/bottom_menu.wxml-->
+
+
+<view class="bottomrow">
+  <view id="first" class="bottomtab" bindtap="select1">
+    <text class="bottomtabText" style="color:{{color1}}">表白墙</text>
+  </view>
+  <view id="first" class="bottomtab" bindtap="select2">
+    <text class="bottomtabText" style="color:{{color2}}">墙小二</text>
+  </view>
+  <view id="first" class="bottomtab" bindtap="select3">
+    <text class="bottomtabText" style="color:{{color3}}">拼车</text>
+  </view>
+  <view id="third" class="bottomtab" bindtap="select4">
+    <text class="bottomtabText" style="color:{{color4}}">失物招领</text>
+  </view>
+</view>
